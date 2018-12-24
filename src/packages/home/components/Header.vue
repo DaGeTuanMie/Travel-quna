@@ -1,45 +1,60 @@
 <template>
-    <div class="header">
-      <div class="header-left"><div class="iconfont icon1">&#xe696;</div></div>
-      <div class="header-input"><i class="iconfont icon2">&#xe60b;</i>输入城市/游玩/主题</div>
-      <div class="header-right">城市<i class="iconfont icon3">&#xe60c;</i></div>
+  <div class="header">
+    <div class="header-left">
+      <div class="iconfont back-icon">&#xe696;</div>
     </div>
+    <div class="header-input">
+      <span class="iconfont">&#xe60b;</span>
+      输入城市/景点/游玩主题
+    </div>
+    <router-link to="/city">
+    <div class="header-right">
+      北京
+      <span class="iconfont arrow-icon">&#xe60c;</span>
+    </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "HomeHeader"
-    }
+export default {
+  name: 'HomeHeader',
+  props: {
+    city:String
+  }
+}
 </script>
 
-<style scoped lang="stylus">
-  @import "~@/assets/styles/varibles.styl"
+<style lang="stylus" scoped>
+  @import '../../../assets/styles/varibles.styl'
   .header
-    display flex
-    line-height .86rem
-    color #ffffff
-    background $bgColor
+    display: flex
+    line-height: .64rem
+    background: $bgColor
+    color: #fff
     .header-left
-      width .64rem
-      float left
-      .icon1
-        font-size .4rem
-        text-align center
+      width: .64rem
+      float: left
+      .back-icon
+        text-align: center
+        font-size: .4rem
     .header-input
-      flex 1
-      height .64rem
-      line-height .64rem
-      padding-left .2rem
-      margin-top .12rem
-      margin-left .2rem
-      background #ffffff
-      color #ccc
-      border-radius .1rem
+      flex: 1
+      height: .64rem
+      line-height: .64rem
+      margin-top: .12rem
+      margin-left: .2rem
+      padding-left: .2rem
+      background: #fff
+      border-radius: .1rem
+      color: #ccc
     .header-right
-      width 1.24rem
-      float right
-      text-align center
-      .icon3
-        vertical-align top
-        font-size .24rem
+      min-width: 1.04rem
+      padding: 0 .1rem
+      float: right
+      text-align: center
+      color: #fff
+      .arrow-icon
+        margin-left: -.04rem
+        font-size: .24rem
 </style>
